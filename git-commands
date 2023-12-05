@@ -1,0 +1,102 @@
+-------------------basics--------------------
+What is Git
+git is the version control system
+-> easily recover files
+-> who introduced an issue and when
+-> rollback previous working file
+
+History of VCS(version control system)
+-> Local VCS
+-> Centralized VCS
+-> Distributed VCS
+
+Git Features
+-> Almost every operation is local
+-> Git has integrity
+-> Git generally only adds data
+
+
+Download the git for linux
+-> sudo apt update
+-> sudo apt install git
+
+Set up in local machine with configuration
+->git config --global user.name "git used name"
+->git config --global user.email "git used email"
+
+Clone and Status
+-> git clone <git url>
+-> git status
+    --> untracked (new file that git doesn't yrt track)
+    --> modified (Changed code in file)
+    --> staged (file is ready to committed)
+    --> unmodified (unchanged)
+
+Add and Commit
+-> adds new or changed files
+    --> git add <file name> (to add particular files)
+    --> git add . (to add all the files at a time)
+
+-> commit is the record of change
+    --> git commit -m "my commit"
+
+-> Git push
+    --> git push origin <branch name>
+
+-> Initial command
+    --> git init
+    --> git remote add origin <--link--> (to add git remote)
+    --> git remote -v (to verify remote)
+    --> git branch (to check branch)
+    --> git branch -M main (to rename branch)
+    --> git push origin main
+
+-> Branch command
+    --> git branch (to check branch)
+    --> git branch -M main (to rename branch)
+    --> git checkout <branch name> (to navigate new branch)
+    --> git checkout -b <new branch name> (to create new branch)
+    --> git branch -d <branch name> (to delete the branch)
+
+-> Merging code
+    --> git diff <branch name> (to compare commit, branches, files and more)
+    --> git merge <branch name> (to merge 2 branches)
+
+    -->create PR (direct way to create PR navigating to git website)
+
+-> Git pull
+    --> git pull origin <branch name> (to pull the merged code from different branch push to main branch, suppose 2 people are working on the different branches and 1 person raise PR to master branch but 2 person dont know what is happen, so the admin or 2nd person has to raise pr from master to 2nd person branch, so second person can pull the code)
+    --> git fetch (to pull branch created using git website)
+
+    ---------------Intermediate--------------
+
+-> Resolve Merge conflicts
+    --> git merge <branch name>
+
+
+-> Undoing Changes(to revert)
+    --> Case 1: staged changes
+        --> git reset <file name> (to reset particular file which is staged(added))
+        --> git reset (to reset all files)
+        --> git reset --hard (which will reflect also in VS Code)
+    
+    --> Case 2: commited changes (for one commit)
+        --> git reset HEAD~1
+
+    --> Case 3: commited changes (for many commit)
+        --> git reset <commit hash>
+        --> git reset --hard <commit hash>
+        --> git revert <commit hash> (its always better to revert the code and commit it)
+        --> git log (to see the hash or commits)
+
+------------------Advance-------------------
+-> Microservices
+    --> git submodule add <repository_url> (to create the sub repo)
+    --> git submodule init (after cloning repo we need to initialize repo to add submodules)
+    --> git submodule update
+    --> git submodule update --remote --recursive (If you want to update all submodules to the latest commit on their respective branches)
+    --> git clone --recursive <repository_url>(to clone all the updated and initialize submodules and also main repo)
+    --> git submodule update --init --recursive
+    --> git submodule deinit <path> {and} git rm <path> (to remove submodule)
+
+

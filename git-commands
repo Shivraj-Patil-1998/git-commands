@@ -100,3 +100,9 @@ Add and Commit
     --> git submodule deinit <path> {and} git rm <path> (to remove submodule)
 
 
+
+
+For more info
+https://githubtraining.github.io/training-manual/book.pdf
+
+
